@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "772463841810",
+    "firebase_url": "https://wolfsmoonclash-default-rtdb.firebaseio.com",
+    "project_id": "wolfsmoonclash",
+    "storage_bucket": "wolfsmoonclash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772463841810:android:dcbf8a322b5b87abd53ecb",
+        "android_client_info": {
+          "package_name": "com.lilithgame.hgame.g"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772463841810-82ci4vk6b097d5824067gv4opbb09tje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5uHYFDXnF6HVgwBQk2SjNYMK73dIqjCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772463841810-82ci4vk6b097d5824067gv4opbb09tje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

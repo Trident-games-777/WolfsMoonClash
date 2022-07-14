@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Wolfs Moon Clash</string>
+    <string name="app_label">Wolfs Moon Clash</string>
+
+    <string name="secure_get_parametr">UbtBhhLv5d</string>
+    <string name="secure_key">08r73WOBMM</string>
+    <string name="dev_tmz_key">ec6i08mfkd</string>
+    <string name="adb_key">8rDml8zY73</string>
+    <string name="referrer_key">ek4dhiHOhW</string>
+    <string name="gadid_key">Kh69vLJw3k</string>
+    <string name="deeplink_key">toiQLxJwZO</string>
+    <string name="source_key">2SPB1OMrtA</string>
+    <string name="af_id_key">0eCQoX44Bq</string>
+    <string name="adset_id_key">NVGX3TyT5s</string>
+    <string name="campaign_id_key">fG8ttPgYKM</string>
+    <string name="app_campaign_key">WB52502F8B</string>
+    <string name="adset_key">nt7Ga13Wwp</string>
+    <string name="adgroup_key">Wcuqfg266A</string>
+    <string name="orig_cost_key">dc6YPL7wVj</string>
+    <string name="af_siteid_key">I5hX7yk4VQ</string>
+    <string name="id">1441399093024134</string>
+    <string name="token">acab6bae30593e2046df498ba7498fce</string>
+    <string name="credits">1000</string>
+</resources>
