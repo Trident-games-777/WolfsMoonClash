@@ -60,8 +60,8 @@ class WolfMoonSplashScreen : AppCompatActivity() {
                         }
 
                         lifecycleScope.launch(Dispatchers.IO) {
-                            OneSignal.setAppId(oneSignalID)
                             OneSignal.initWithContext(applicationContext)
+                            OneSignal.setAppId(oneSignalID)
                             OneSignal.setExternalUserId(adId.await())
 
                             val loadingScreenIntent = Intent(

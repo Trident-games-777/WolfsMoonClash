@@ -9,31 +9,35 @@ import android.os.Message
 import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.lilithgame.hgame.g.R
 import com.lilithgame.hgame.g.databinding.ScreenWolfMoonWebBinding
 import com.lilithgame.hgame.g.repository.WolfMoonRepository
 import com.lilithgame.hgame.g.screens.WolfMoonSplashScreen.Companion.EXTRA_BASE_LINK_DATA
 import com.lilithgame.hgame.g.screens.WolfMoonSplashScreen.Companion.EXTRA_LINK_DATA
 
 class WolfMoonWebScreen : AppCompatActivity() {
-    private val binding by lazy { ScreenWolfMoonWebBinding.inflate(layoutInflater) }
     private var messageAb: ValueCallback<Array<Uri?>>? = null
-    private val webView by lazy { binding.webView }
-    private val base by lazy { requireNotNull(intent.getStringExtra(EXTRA_BASE_LINK_DATA)) }
-    private val repo by lazy {
-        WolfMoonRepository(
-            getSharedPreferences("prefs", Context.MODE_PRIVATE)
-        )
+    private val binding by lazy(LazyThreadSafetyMode.NONE) {
+        ScreenWolfMoonWebBinding.inflate(layoutInflater)
     }
+    private lateinit var webView: WebView
+    private lateinit var base: String
+    private lateinit var repo: WolfMoonRepository
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val url = requireNotNull(intent.getStringExtra(EXTRA_LINK_DATA))
-        webView.loadUrl(url)
+        window.statusBarColor = resources.getColor(R.color.black, null)
 
-        webView.webViewClient = WebClient()
+        webView = binding.webView
+        val url = requireNotNull(intent.getStringExtra(EXTRA_LINK_DATA))
+        base = requireNotNull(intent.getStringExtra(EXTRA_BASE_LINK_DATA))
+        webView.loadUrl(url)
+        repo = WolfMoonRepository(getSharedPreferences("prefs", Context.MODE_PRIVATE))
+
+        webView.webViewClient = Client()
         webView.settings.javaScriptEnabled = true
         CookieManager.getInstance().setAcceptCookie(true)
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
@@ -88,7 +92,7 @@ class WolfMoonWebScreen : AppCompatActivity() {
         )
     }
 
-    private inner class WebClient : WebViewClient() {
+    private inner class Client : WebViewClient() {
         override fun onReceivedError(
             view: WebView?,
             errorCode: Int,
