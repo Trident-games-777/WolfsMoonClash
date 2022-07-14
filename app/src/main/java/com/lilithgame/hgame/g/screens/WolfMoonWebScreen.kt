@@ -52,7 +52,6 @@ class WolfMoonWebScreen : AppCompatActivity() {
                 super.onProgressChanged(view, newProgress)
             }
 
-            //For Android API >= 21 (5.0 OS)
             override fun onShowFileChooser(
                 webView: WebView?,
                 filePathCallback: ValueCallback<Array<Uri?>>?,
@@ -60,7 +59,7 @@ class WolfMoonWebScreen : AppCompatActivity() {
             ): Boolean {
                 messageAb = filePathCallback
                 selectImageIfNeed()
-                return true
+                return super.onShowFileChooser(webView, filePathCallback, fileChooserParams)
             }
 
             @SuppressLint("SetJavaScriptEnabled")
